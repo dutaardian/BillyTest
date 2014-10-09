@@ -22,25 +22,73 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
+        <!--<meta name="format-detection" content="telephone=no" />--> 
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, 
+        maximum-scale=1, minimum-scale=1, width=device-width, 
+        target-densitydpi=device-dpi" />
+        
+        <!--<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css">-->
+        
+        
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.css">
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		<script src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.js">
+        
         <title>Hello World</title>
+        
+        <script>
+        	var watchID;
+        	var curr_data;
+        	var title;
+        	
+        	document.addEventListener("deviceready", onDeviceReady, false);
+        	
+        	function onDeviceReady() {
+        		title = $("#title");
+        		navigator.splashscreen.hide();
+        		
+        	}
+        </script>
+        <script>
+        	$( document ).on( "pageinit", "#home", function() {
+    		$( document ).on( "swipeleft swiperight", "#home", function( e ) {
+        		// We check if there is no open panel on the page because otherwise
+        		// a swipe to close the left panel would also open the right panel (and v.v.).
+        		// We do this by checking the data that the framework stores on the page element (panel: open).
+        		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            		if ( e.type === "swiperight" ) {
+                		$( "#left-panel" ).panel( "open" );
+            		} 
+        			}
+    			});
+				});
+        </script>
+        
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <div data-role="page" id="home" data-url="home">
+        	<div data-role="panel" data-display="reveal" data-theme="a" id="left-panel">
+				<p>Isi Panel</p>
+				<a href=”="tel:+628998097972" data-role="button" data-icon="info" data-theme="a"> Telpon </a>
+				<a href="#" data-rel="close" data-role="button" data-icon="delete" data-theme="a">Close Panel</a>
+			</div>	
+        	<div data-role="header">
+				<h1>Home Page</h1>
+        		<a href="#left-panel" data-role="button" data-icon="grid" class="ui-btn-left">Menu</a>
+        		<a href="#" data-role="button" data-icon="search" class="ui-btn-right">Search</a>
+			</div>
+			<div data-role="content">
+				<p>
+				Ini adalah konten halaman web mobile dengan toolbar pada header.
+				</p>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h1>&copy; Copyright 2014 Billy Musik</h1>
+			</div>
+		</div>
+
     </body>
 </html>

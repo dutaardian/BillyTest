@@ -39,6 +39,7 @@
         
         <title>Hello World</title>
         
+               
         <script>
         	var watchID;
         	var curr_data;
@@ -72,23 +73,47 @@
         <div data-role="page" id="home" data-url="home">
         	<div data-role="panel" data-display="reveal" data-theme="a" id="left-panel">
 				<p>Isi Panel</p>
-				<a href=”="tel:+628998097972" data-role="button" data-icon="info" data-theme="a"> Telpon </a>
+				<a href="tel:+628998097972" data-role="button" data-icon="info" data-theme="a">Billy</a>
 				<a href="#" data-rel="close" data-role="button" data-icon="delete" data-theme="a">Close Panel</a>
 			</div>	
         	<div data-role="header">
-				<h1>Home Page</h1>
-        		<a href="#left-panel" data-role="button" data-icon="grid" class="ui-btn-left">Menu</a>
-        		<a href="#" data-role="button" data-icon="search" class="ui-btn-right">Search</a>
+        		<div data-role="navbar">
+        			<ul>
+        				<li><a href="#left-panel" data-role="button" data-icon="grid">Menu</a></li>
+        				<li><a href="#about" data-rel="dialog" data-icon="info">Tentang</a></li>
+        				<li><a href="#" data-role="button" data-icon="search">Search</a></li>
+        			</ul>
+        		</div>
 			</div>
 			<div data-role="content">
-				<p>
-				Ini adalah konten halaman web mobile dengan toolbar pada header.
-				</p>
+				<center><img src="img/logo.png" /img></center>
+				<center>
+					<a href="#" class="ui-btn ui-corner-all">GITAR</a>
+				</center>
+				<center>
+					<a href="#" class="ui-btn ui-corner-all">DRUM</a>
+				</center>
+				<center>
+					<a href="#" class="ui-btn ui-corner-all">BASS</a>
+				</center>
+				<p> Contoh Audio </p>
+				<audio controls>
+					<source src="audio/black.ogg" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>&copy; Copyright 2014 Billy Musik</h1>
 			</div>
 		</div>
+		<div data-role="page" id="about">
+    		<div data-role="header">
+    			<h1>Tentang</h1>
+    		</div>
+    		<div data-role="content">
+    			<p> Applikasi punya BillyMusik.com</p>
+    		</div>
+    	</div>
 
     </body>
 </html>

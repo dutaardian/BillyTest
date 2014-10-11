@@ -1,0 +1,29 @@
+#main ul, #main li {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	font-family: Arial;
+	margin: 0 10px;
+}
+
+#main li {
+	list-style: none;
+	height: 40px;
+	background: #fff;
+	margin-bottom: 0.2em;
+	line-height: 40px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #999;
+}
+
+#main li a {
+	color: #333;
+	font-weight: bold;
+	text-decoration: none;
+	margin-left: 1em;
+}
+

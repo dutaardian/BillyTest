@@ -33,13 +33,31 @@
         <!--<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css">-->
         
         
-        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.css">
-		<script src="jquery/jquery-1.9.1.min.js"></script>
-		<script src="jquery.mobile-1.4.3/jquery.mobile-1.4.3.min.js">
-        
-        <title>Hello World</title>
-        
-               
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css">
+		<script src="jquery/jquery-1.11.1.min.js"></script>
+		<script src="jquery-migrate/jquery-migrate-1.2.1.min.js"></script>
+		<script src="jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.js"> </script>
+		<link rel="stylesheet" type="text/css" href="zmystyle.css">
+		
+		<title> Billy Musik </title>
+	
+		<style>
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+				margin: 0;
+			}
+			.ui-li-static.ui-collapsible {
+				padding: 0;
+			}
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+				border-top-width: 0;
+			}
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+			.ui-li-static.ui-collapsible > .ui-collapsible-content {
+				border-bottom-width: 0;
+			}
+		</style>
+
+		
         <script>
         	var watchID;
         	var curr_data;
@@ -67,13 +85,18 @@
     			});
 				});
         </script>
+		
+        <script>
+        	var audio = document.getElementById('play');
+			audio.addEventListener('touchstart', function() { audio.play(); }, false);
+        </script>
         
     </head>
     <body>
         <div data-role="page" id="home" data-url="home">
         	<div data-role="panel" data-display="reveal" data-theme="a" id="left-panel">
 				<p>Isi Panel</p>
-				<a href="tel:+628998097972" data-role="button" data-icon="info" data-theme="a">Billy</a>
+				<a href="tel:+6281312345922" data-role="button" data-icon="info" data-theme="a">Call BMC</a>
 				<a href="#" data-rel="close" data-role="button" data-icon="delete" data-theme="a">Close Panel</a>
 			</div>	
         	<div data-role="header">
@@ -81,23 +104,67 @@
         			<ul>
         				<li><a href="#left-panel" data-role="button" data-icon="grid">Menu</a></li>
         				<li><a href="#about" data-rel="dialog" data-icon="info">Tentang</a></li>
-        				<li><a href="#" data-role="button" data-icon="search">Search</a></li>
+        				<li><a href="search.html" data-role="button" data-icon="search">Search</a></li>
         			</ul>
         		</div>
 			</div>
 			<div data-role="content">
 				<center><img src="img/logo.png" /img></center>
-				<center>
-					<a href="#" class="ui-btn ui-corner-all">GITAR</a>
-				</center>
-				<center>
-					<a href="#" class="ui-btn ui-corner-all">DRUM</a>
-				</center>
-				<center>
-					<a href="#" class="ui-btn ui-corner-all">BASS</a>
-				</center>
-				<p> Contoh Audio </p>
-				<audio controls>
+				
+					<ul data-role="listview" data-inset="true" data-shadow="false">
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>KEYBOARD</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>BASS</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>BIOLA</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>DRUM</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>GUITAR</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>SAXOPHONE</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					  <li data-role="collapsible" data-iconpos="right" data-inset="false">
+						<h2>PIANO</h2>
+						<ul data-role="listview" data-theme="b">
+						  <li><a href="#">New</a></li>
+						  <li><a href="#">Second</a></li> 
+						</ul>
+					  </li>
+					</ul>
+				
+				<p> Contoh Audio 1 </p>
+				<audio id="play" controls="true">
 					<source src="audio/black.ogg" type="audio/ogg">
 					Your browser does not support the audio element.
 				</audio>

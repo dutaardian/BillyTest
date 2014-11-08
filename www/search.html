@@ -40,31 +40,142 @@
 		<link rel="stylesheet" type="text/css" href="zmystyle.css">
 		
 		<title> Billy Musik </title>
+	
+		<style>
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+				margin: 0;
+			}
+			.ui-li-static.ui-collapsible {
+				padding: 0;
+			}
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+				border-top-width: 0;
+			}
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+			.ui-li-static.ui-collapsible > .ui-collapsible-content {
+				border-bottom-width: 0;
+			}
+		</style>
+
+		
+        <script>
+        	var watchID;
+        	var curr_data;
+        	var title;
+        	
+        	document.addEventListener("deviceready", onDeviceReady, false);
+        	
+        	function onDeviceReady() {
+        		title = $("#title");
+        		navigator.splashscreen.hide();
+        		
+        	}
+        </script>
+        <script>
+        	$( document ).on( "pageinit", "#home", function() {
+    		$( document ).on( "swipeleft swiperight", "#home", function( e ) {
+        		// We check if there is no open panel on the page because otherwise
+        		// a swipe to close the left panel would also open the right panel (and v.v.).
+        		// We do this by checking the data that the framework stores on the page element (panel: open).
+        		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            		if ( e.type === "swiperight" ) {
+                		$( "#left-panel" ).panel( "open" );
+            		} 
+        			}
+    			});
+				});
+        </script>
+		
+        <script>
+        	var audio = document.getElementById('play');
+			audio.addEventListener('touchstart', function() { audio.play(); }, false);
+        </script>
         
     </head>
-	
     <body>
-        <div data-role="page" id="home" data-url="home">
-        	<div data-role="panel" data-display="reveal" data-theme="a" id="left-panel">
-				<p>Isi Panel</p>
-				<a href="tel:+6281312345922" data-role="button" data-icon="info" data-theme="a">Call BMC</a>
-				<a href="#" data-rel="close" data-role="button" data-icon="delete" data-theme="a">Close Panel</a>
-			</div>	
-        	<div data-role="header">
-        		<div data-role="navbar">
-        			<ul>
-        				
-        			</ul>
-        		</div>
+	
+		<!--Search-->
+		<div data-role="page" id="search" data-url="search">
+			<div data-role="header" data-position="fixed">
+				<h1>Search</h1>
+				<a href="index.html" rel="external" data-ajax="false" data-role="button" data-icon="back" class="ui-btn-left"> Kembali </a>
 			</div>
 			<div data-role="content">
-				<center><img src="img/logo.png" /img></center>
-				
-				
+				<form class="ui-filterable">
+					<input id="autocomplete-input" data-type="search" placeholder="Cari barang...">
+				</form>
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-input="#autocomplete-input" data-inset="true">
+					<li><a href="send.html" rel="external" data-ajax="false">
+						<img src="img/produk/Yamaha-S950.jpg">
+					<h2>Yamaha PSR S950 (New)</h2>
+					<p>Rp 11.900.000</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/Yamaha-S910.jpg">
+					<h2>Yamaha PSR S750 (New)</h2>
+					<p>Rp 9.500.000</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/Yamaha-S750.jpg">
+					<h2>Yamaha PSR-E443 Flashdisk (new)</h2>
+					<p>Rp 4.500.000</p></a>
+					</li>
+					
+					<li><a href="#">
+						<img src="img/produk/Yamaha-S710.jpg">
+					<h2>Yamaha PSR S-910 (second)</h2>
+					<p>Nego</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/Yamaha-S443.jpg">
+					<h2>Yamaha PSR S-710</h2>
+					<p>Nego</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/roland-e60.jpg">
+					<h2>Roland E-60 (second)</h2>
+					<p>Nego</p></a>
+					</li>
+					
+					<!-- Guitar -->
+					<li><a href="#">
+						<img src="img/produk/Yamaha-C315-Nylon.jpg">
+					<h2>Yamaha C-315 Nylon (New)</h2>
+					<p>Rp. 600.000</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/Epiphone-LP100.jpg">
+					<h2>Epiphone LP-100 (New)</h2>
+					<p>Rp 3.300.000</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/Epiphone-Les-Paul-Custom.jpg">
+					<h2>Epiphone Les Paul Custom (New)</h2>
+					<p>Rp 7.800.000</p></a>
+					</li> 
+					
+					<li><a href="#">
+						<img src="img/produk/ibanez.jpg">
+					<h2>Ibanez (Second)</h2>
+					<p>Call Us</p></a>
+					</li>
+					<li><a href="gillmoregs-1.html" rel="external" data-ajax="false" data-role="button" data-icon="search">
+						<img src="img/produk/Gillmore-GS-1.jpg">
+					<h2>Gillmore GS-1 (Second)</h2>
+					<p>Call Us</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/yamaha.jpg">
+					<h2>Yamaha (Second)</h2>
+					<p>Call Us</p></a>
+					</li>
+					
+				</ul>
 			</div>
 			<div data-role="footer" data-position="fixed">
 				<h1>&copy; Copyright 2014 Billy Musik</h1>
 			</div>
 		</div>
+
     </body>
 </html>

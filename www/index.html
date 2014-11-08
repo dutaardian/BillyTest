@@ -99,12 +99,12 @@
 				<a href="tel:+6281312345922" data-role="button" data-icon="info" data-theme="a">Call BMC</a>
 				<a href="#" data-rel="close" data-role="button" data-icon="delete" data-theme="a">Close Panel</a>
 			</div>	
-        	<div data-role="header">
+        	<div data-role="header" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
         				<li><a href="#left-panel" data-role="button" data-icon="grid">Menu</a></li>
         				<li><a href="#about" data-rel="dialog" data-icon="info">Tentang</a></li>
-        				<li><a href="search.html" data-role="button" data-icon="search">Search</a></li>
+        				<li><a href="search.html" rel="external" data-ajax="false" data-role="button" data-icon="search">Search</a></li>
         			</ul>
         		</div>
 			</div>
@@ -181,6 +181,38 @@
     			<p> Applikasi punya BillyMusik.com</p>
     		</div>
     	</div>
+		<!--Search-->
+		<div data-role="page" id="search" data-url="search">
+			<div data-role="header" data-position="fixed">
+				<h1>Search</h1>
+				<a href="#home" data-role="button" data-icon="back" class="ui-btn-left"> Kembali </a>
+			</div>
+			<div data-role="content">
+				<form class="ui-filterable">
+					<input id="autocomplete-input" data-type="search" placeholder="Cari barang...">
+				</form>
+				<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-input="#autocomplete-input" data-inset="true">
+					<li><a href="gitar.html" rel="external" data-ajax="false">
+						<img src="img/produk/album-bb.jpg">
+					<h2>Broken Bells</h2>
+					<p>Broken Bells</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/album-hc.jpg">
+					<h2>Warning</h2>
+					<p>Hot Chip</p></a>
+					</li>
+					<li><a href="#">
+						<img src="img/produk/album-p.jpg">
+					<h2>Wolfgang Amadeus Phoenix</h2>
+					<p>Phoenix</p></a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h1>&copy; Copyright 2014 Billy Musik</h1>
+			</div>
+		</div>
 
     </body>
 </html>

@@ -50,6 +50,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/com.jsmobile.plugins.sms/www/sms.js",
+        "id": "com.jsmobile.plugins.sms.sms",
+        "clobbers": [
+            "window.sms"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -203,6 +217,8 @@ module.exports.metadata =
     "org.apache.cordova.device-orientation": "0.3.8-dev",
     "org.apache.cordova.geolocation": "0.3.9-dev",
     "org.apache.cordova.media": "0.2.14",
+    "org.apache.cordova.splashscreen": "0.3.4",
+    "com.jsmobile.plugins.sms": "0.0.1",
     "org.apache.cordova.file": "1.3.1"
 }
 // BOTTOM OF METADATA

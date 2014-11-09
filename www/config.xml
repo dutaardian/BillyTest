@@ -7,6 +7,8 @@
     <author email="billymario60@gmail.com" href="http://billymusic.com">
         Billy Musik 
     </author>
+	<preference name="SplashScreen" value="screen" />
+	<preference name="SplashScreenDelay" value="5000" />
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="3.5.0" />
     <preference name="orientation" value="default" />

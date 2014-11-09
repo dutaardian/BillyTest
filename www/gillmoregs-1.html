@@ -90,11 +90,29 @@
         }
 
         </script>
+		
+		<script>
+			var messageInfo = {
+				phoneNumber: "08998097972",
+				textMessage: "This is a test message"
+			};
+
+			sms.sendMessage(messageInfo, function(message) {
+				console.log("success: " + message);
+			}, function(error) {
+				console.log("code: " + error.code + ", message: " + error.message);
+			});
+		</script>
       </head>
       <body>
         <a href="#" class="btn large" onclick="playAudio('/android_asset/www/audio/1.mp3');">Play Audio</a>
         <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
         <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
         <p id="audio_position"></p>
+		<p>
+			<script> 
+				sms.sendMessage(messageInfo, successCallback, failureCallback);
+			</script>
+		</p>
       </body>
     </html>

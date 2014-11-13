@@ -1,4 +1,4 @@
-var smsExport = {};
+cordova.define("com.jsmobile.plugins.sms.sms", function(require, exports, module) { var smsExport = {};
 
 smsExport.sendMessage = function(messageInfo, successCallback, errorCallback) {
     if (messageInfo == null || typeof messageInfo !== 'object') {
@@ -33,3 +33,5 @@ smsExport.sendMessage = function(messageInfo, successCallback, errorCallback) {
 };
 
 module.exports = smsExport;
+
+});

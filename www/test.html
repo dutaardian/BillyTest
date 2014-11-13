@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>yamaha-psr-s950</title>
+
+		<meta charset="utf-8" />
+        <!--<meta name="format-detection" content="telephone=no" />--> 
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, 
+        maximum-scale=1, minimum-scale=1, width=device-width, 
+        target-densitydpi=device-dpi" />
+        
+        <!--<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css">-->
+        
+        
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css">
+		<script src="jquery/jquery-1.11.1.min.js"></script>
+		<script src="jquery-migrate/jquery-migrate-1.2.1.min.js"></script>
+		<script src="jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.js"> </script>
+		<link rel="stylesheet" type="text/css" href="style2.css">
+		
+		<title> Billy Musik </title> 
+          
+      </head>
+      <body>
+		<div data-role="page">
+			<div data-role="header" data-position="fixed">
+				<h1>yamaha-psr-s950</h1>
+				<a href="search.html" rel="external" data-ajax="false" data-role="button" data-icon="back" class="ui-btn-left"> Kembali </a>
+			</div>
+			
+			<div data-role="content">
+				<img src="img/produk/display/yamaha-psr-s950.jpg" style="width: 100%; max-width:100%;" id="gambar"></img>
+				<a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-left ui-shadow-icon ui-btn-b" onclick="playAudio('/android_asset/www/audio/1.mp3');">Play Audio</a> 
+				<a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left ui-shadow-icon ui-btn-b" onclick="stopAudio();">Stop Audio</a>
+				<p id="audio_position"></p>
+				<hr>
+				<a href="tel:+6281312345922" data-role="button" data-icon="info" data-theme="a">Call BMC</a>
+			</div>
+			
+			<div data-role="footer" data-position="fixed">
+				<h1>&copy; Copyright 2014 Billy Musik</h1>
+			</div>
+			
+		</div> 
+      </body>
+    </html>

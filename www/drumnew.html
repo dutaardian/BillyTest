@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!--<meta name="format-detection" content="telephone=no" />--> 
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, 
+        maximum-scale=1, minimum-scale=1, width=device-width, 
+        target-densitydpi=device-dpi" />
+        
+        <!--<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css">-->
+        
+        
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.css">
+		<script src="jquery/jquery-1.11.1.min.js"></script>
+		<script src="jquery-migrate/jquery-migrate-1.2.1.min.js"></script>
+		<script src="jquery.mobile-1.4.4/jquery.mobile-1.4.4.min.js"> </script>
+		<link rel="stylesheet" type="text/css" href="zmystyle.css">
+		
+		<title> Billy Musik </title>
+	
+		<style>
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading {
+				margin: 0;
+			}
+			.ui-li-static.ui-collapsible {
+				padding: 0;
+			}
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading > .ui-btn {
+				border-top-width: 0;
+			}
+			.ui-li-static.ui-collapsible > .ui-collapsible-heading.ui-collapsible-heading-collapsed > .ui-btn,
+			.ui-li-static.ui-collapsible > .ui-collapsible-content {
+				border-bottom-width: 0;
+			}
+		</style>
+
+		
+        <script>
+        	var watchID;
+        	var curr_data;
+        	var title;
+        	
+        	document.addEventListener("deviceready", onDeviceReady, false);
+        	
+        	function onDeviceReady() {
+        		title = $("#title");
+        		navigator.splashscreen.hide();
+        		
+        	}
+        </script>
+        <script>
+        	$( document ).on( "pageinit", "#home", function() {
+    		$( document ).on( "swipeleft swiperight", "#home", function( e ) {
+        		// We check if there is no open panel on the page because otherwise
+        		// a swipe to close the left panel would also open the right panel (and v.v.).
+        		// We do this by checking the data that the framework stores on the page element (panel: open).
+        		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            		if ( e.type === "swiperight" ) {
+                		$( "#left-panel" ).panel( "open" );
+            		} 
+        			}
+    			});
+				});
+        </script>
+		
+        <script>
+        	var audio = document.getElementById('play');
+			audio.addEventListener('touchstart', function() { audio.play(); }, false);
+        </script>
+        
+    </head>
+    <body>
+        <div data-role="page" id="home" data-url="home">
+        	<div data-role="panel" data-display="reveal" data-theme="a" id="left-panel">
+				<p>Panel</p>
+				<a href="tel:+6281312345922" data-role="button" data-icon="info" data-theme="a">Call BMC</a>
+				<a href="#" data-rel="close" data-role="button" data-icon="delete" data-theme="a">Close Panel</a>
+			</div>	
+        	<div data-role="header" data-position="fixed">
+        		<div data-role="navbar">
+        			<ul>
+        				<li><a href="#left-panel" data-role="button" data-icon="grid">Menu</a></li>
+        				<li><a href="#about" data-rel="dialog" data-icon="info">Tentang</a></li>
+        				<li><a href="search.html" rel="external" data-ajax="false" data-role="button" data-icon="search">Search</a></li>
+        			</ul>
+        		</div>
+			</div>
+			<div data-role="content">
+				<div class="content-primary">	
+				<ul data-role="listview">
+					<h5>Drum New</h5>
+					<li><a href="Yamaha-DTX400K.html" rel="external" data-ajax="false">
+						<img src="img/produk/Yamaha-DTX400K.jpg">
+					<h2>Yamaha DTX400K (new)</h2>
+					<p>Rp 3.800.000</p></a>
+					</li>
+
+					<li><a href="DTX-450K.html" rel="external" data-ajax="false">
+						<img src="img/produk/DTX-450K.jpg">
+					<h2>DTX 450K (new)</h2>
+					<p>	Rp 4.900.000</p></a>
+					</li>
+				</ul>
+				</div><!--/content-primary -->		
+			<div data-role="footer" data-position="fixed">
+				<h1>&copy; Copyright 2014 Billy Musik</h1>
+			</div>
+		</div>
+		<div data-role="page" id="about">
+    		<div data-role="header">
+    			<h1>Tentang</h1>
+    		</div>
+    		<div data-role="content">
+    			<p> Applikasi punya BillyMusik.com</p>
+    		</div>
+    	</div> 
+			<div data-role="footer" data-position="fixed">
+				<h1>&copy; Copyright 2014 Billy Musik</h1>
+			</div>
+		</div>
+
+    </body>
+</html>
